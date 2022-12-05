@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="userh1">USER:  <%= username %></h1>
+    <h2> 
+        <br>
+        Now you are logged up so you can enjoy our platforms services. 
+    </h2>
+    <form  enctype="multipart/form-data" method="POST" action="/login">
+        <label>Upload photo here</label><br>
+        <input id="file" type="file" name="file" onchange=" return fileValidation()"><br>
+        <div id="imagePreview" ></div><br>
+
+        <label >Upload video here. Less than 20 mb size</label><br>
+        <input id="file2" type="file" name="file2" onchange=" return preview()"><br>
+        <button type="submit" style="background-color:cyan;color: white;">upload</button>
+    </form>
+    
+</body>
+<script>
+    function preview(){
+        var fileInput = document.getElementById('file2');
+        var filePath=fileInput.value;
+
+        var allowedExtensions =
+                /(\.mp4|\.mkv|\.webm|\.avi)$/i;
+         
+        if (!allowedExtensions.exec(filePath)) {
+            alert('Invalid file type');
+            fileInput.value = '';
+            return false;
+        } 
+    }
+
+
+
+    function fileValidation() {
+        var fileInput =
+            document.getElementById('file');
+         
+        var filePath = fileInput.value;
+     
+        // Allowing file type
+        var allowedExtensions =
+                /(\.jpg|\.jpeg|\.png|\.gif|\.webp)$/i;
+         
+        if (!allowedExtensions.exec(filePath)) {
+            alert('Invalid file type');
+            fileInput.value = '';
+            return false;
+        }
+        else
+        {
+         
+            // Image preview
+            if (fileInput.files && fileInput.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById(
+                        'imagePreview').innerHTML =
+                        '<img src="' + e.target.result
+                        + '"width="200px" height="200px"/>';
+                };
+                 
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    }
+</script>
+</html>

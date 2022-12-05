@@ -1,0 +1,51 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(224, 219, 233);
+}
+.signup{
+    color: rgb(49, 50, 51);
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+    height: 400px;
+    width: 500px;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 30px;
+
+}
+#signup{
+    background-color: hsl(300, 76%, 72%);
+
+}
+#signup button{
+    color: white;
+    background-color: rgb(16, 121, 212);
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top:30px ;
+    padding: 7px;
+    border-style: none;
+    border-radius: 10px;
+
+}
+#signup input{
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    border-style: none;
+    text-align: center;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#signup input:hover{
+    height:50px;
+    background-color: antiquewhite;
+}
